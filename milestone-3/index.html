@@ -16,37 +16,41 @@
       <!-- Personal Information Section -->
       <h3>Personal Information</h3>
       <input type="text" id="name" placeholder="Full Name" required>
-      <input type="email" id="email" placeholder="Email" required>
-      <input type="tel" id="phone" placeholder="Phone Number" required>
+      <input type="text" id="title" placeholder="Title (e.g., Student, Developer)" required>
       <input type="text" id="address" placeholder="Address" required>
+      <input type="tel" id="phone" placeholder="Phone Number" required>
+      <input type="email" id="email" placeholder="Email" required>
 
-      <!-- Education Section -->
-      <h3>Education</h3>
-      <input type="text" id="education-institution" placeholder="Institution" required>
-      <input type="text" id="education-degree" placeholder="Degree" required>
-      <input type="text" id="education-dates" placeholder="Dates Attended" required>
+      <!-- Skills Section -->
+      <h3>Skills</h3>
+      <textarea id="skills" placeholder="Skills (comma-separated)" required></textarea>
 
       <!-- Work Experience Section -->
       <h3>Work Experience</h3>
       <input type="text" id="work-position" placeholder="Position" required>
       <input type="text" id="work-company" placeholder="Company" required>
-      <input type="date" id="work-dates" placeholder="Dates of Employment" required>
+      <input type="text" id="work-dates" placeholder="Dates of Employment" required>
       <textarea id="work-description" placeholder="Description of responsibilities" required></textarea>
 
-      <!-- Skills Section -->
-      <h3>Skills</h3>
-      <input type="text" id="skills" placeholder="Skills (comma-separated)" required>
+      <!-- Education Section -->
+      <h3>Education</h3>
+      <input type="text" id="education-degree" placeholder="Degree" required>
+      <input type="text" id="education-institution" placeholder="Institution" required>
+      <input type="text" id="education-dates" placeholder="Dates Attended" required>
+
+      <!-- References Section -->
+      <h3>References</h3>
+      <input type="text" id="reference-name" placeholder="Reference Name" required>
+      <input type="tel" id="reference-phone" placeholder="Reference Phone Number" required>
+      <input type="email" id="reference-email" placeholder="Reference Email" required>
 
       <button type="submit">Generate Resume</button>
     </form>
   </div>
 
   <!-- Resume Preview Section -->
-  <div class="resume-preview">
-    <h2>Preview of Your Resume</h2>
-    <div id="resume-content">
-      <!-- Dynamically generated resume content will appear here -->
-    </div>
+  <div class="resume-preview" id="resume-preview">
+    <!-- Dynamically generated resume content will appear here -->
   </div>
 </div>
 
