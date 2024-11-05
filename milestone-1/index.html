@@ -1,42 +1,92 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Resume</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Resume</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section id="personal-info">
-        <h1>Your Name</h1>
-        <p>Contact Information</p>
-        <img src="/profile.jpg" alt="Profile Picture">
-    </section>
-    <button id="toggle-info" class="toogle" type="button">Hide</button>
 
-    <section id="education">
-        <h2>Education</h2>
-        <p>University, Degree, Graduation Year</p>
-    </section>
-    <button id="toggle-edu" class="toogle" type="button">Hide</button>
-    
-    <section id="skills">
-        <h2>Skills</h2>
+  <!-- Personal Information Section -->
+  <header id="header">
+    <div class="profile-pic">
+      <img src="/profile.jpg" alt="Profile Picture">
+    </div>
+    <div class="personal-info">
+      <h1>Herman Walton</h1>
+      <p>Student</p>
+      <p>4200 Patterno Avenue, New York, NY 10471, United States</p>
+      <p>(917)324-1818 | <a href="mailto:hw_alton77_x@yahoo.com">hw_alton77_x@yahoo.com</a></p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Sidebar Section for Skills -->
+    <aside class="sidebar">
+      <h2>Skills</h2>
+      <ul id="skills-section">
+        <li>Advanced Communication Skills</li>
+        <li>Office Technology Skills</li>
+        <li>Motivated Attitude</li>
+        <li>Social Media Platforms</li>
+      </ul>
+      <!-- Toggle Button for Skills Section -->
+      <button class="toggle-section" data-target="skills-section">Toggle Skills</button>
+
+      <h2>Languages</h2>
+      <ul id="languages-section">
+        <li>French</li>
+        <li>Dutch</li>
+      </ul>
+      <!-- Toggle Button for Languages Section -->
+      <button class="toggle-section" data-target="languages-section">Toggle Languages</button>
+    </aside>
+
+    <!-- Main Content Section -->
+    <section class="content">
+      <!-- Profile Section -->
+      <div id="profile-section">
+        <h2>Profile</h2>
+        <p>Hardworking student seeking employment. Ready to utilize my skills and passion to further the mission of a company...</p>
+      </div>
+      <!-- Toggle Button for Profile Section -->
+      <button class="toggle-section" data-target="profile-section">Toggle Profile</button>
+
+      <!-- Employment History Section -->
+      <div id="employment-section">
+        <h2>Employment History</h2>
+        <h3>Sales Associate, Big Apple Bookstore, New York</h3>
+        <p>September 2015 – June 2018</p>
         <ul>
-            <li>JavaScript</li>
-            <li>HTML & CSS</li>
-            <li>TypeScript</li>
+          <li>Greeted customers and assisted them with finding books.</li>
+          <li>Offered literary suggestions based on customer needs.</li>
         </ul>
-    </section>
-    <button id="toggle-skills" class="toogle" type="button">Hide</button>
+      </div>
+      <!-- Toggle Button for Employment History Section -->
+      <button class="toggle-section" data-target="employment-section">Toggle Employment History</button>
 
-    <section id="work-experience">
-        <h2>Work Experience</h2>
-        <p>Previous Job Roles</p>
-    </section>
-    <button id="toggle-exp" class="toogle" type="button">Hide</button>
+      <!-- Education Section -->
+      <div id="education-section">
+        <h2>Education</h2>
+        <h3>Bachelor of Communications, New York University</h3>
+        <p>August 2016 – August 2021</p>
+        <p>Working towards a Communications Degree.</p>
+      </div>
+      <!-- Toggle Button for Education Section -->
+      <button class="toggle-section" data-target="education-section">Toggle Education</button>
 
-    <script src="script.js"></script>
+      <!-- References Section -->
+      <div id="references-section">
+        <h2>References</h2>
+        <p>Dr. Lynn Fogel, Regis High School</p>
+        <p>212-334-4775 | <a href="mailto:fogel.l@regishs.edu">fogel.l@regishs.edu</a></p>
+      </div>
+      <!-- Toggle Button for References Section -->
+      <button class="toggle-section" data-target="references-section">Toggle References</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
