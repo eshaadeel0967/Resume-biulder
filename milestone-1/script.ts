@@ -25,11 +25,11 @@ toggleEducation.addEventListener('click', () => {
     }
 });
 // Select the button and the skills section
-const toggleButton = document.getElementById('toggle-skills') as HTMLButtonElement;
+const toggleSkills = document.getElementById('toggle-skills') as HTMLButtonElement;
 const skillsSection = document.getElementById('skills') as HTMLElement;
 
 // Add a click event listener to the button
-toggleButton.addEventListener('click', () => {
+toggleSkills.addEventListener('click', () => {
     // Toggle the display of the skills section
     if (skillsSection.style.display === 'none') {
         skillsSection.style.display = 'block';
@@ -39,11 +39,11 @@ toggleButton.addEventListener('click', () => {
 });
 
 // Select the button and the skills section
-const toggleButton = document.getElementById('toggle-skills') as HTMLButtonElement;
-const skillsSection = document.getElementById('skills') as HTMLElement;
+const toggleExperience = document.getElementById('toggle-skills') as HTMLButtonElement;
+const experienceSection = document.getElementById('skills') as HTMLElement;
 
 // Add a click event listener to the button
-toggleButton.addEventListener('click', () => {
+toggleExperience.addEventListener('click', () => {
     // Toggle the display of the skills section
     if (skillsSection.style.display === 'none') {
         skillsSection.style.display = 'block';
