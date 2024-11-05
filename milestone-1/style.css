@@ -82,10 +82,132 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
-
+/* Basic Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Layout styling */
+  .container {
+    display: flex;
+    flex: 1;
+    max-width: 1000px;
+    padding: 20px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Sidebar styling */
+  .sidebar {
+    flex: 1;
+    max-width: 1000px;
+    padding: 20px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+   
+  }
+  
+  /* Profile picture styling */
+  .profile-pic img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  /* Personal Information Styling */
+  .personal-info {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  /* Main content styling */
+  .content {
+    flex: 3;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Section Heading Styling */
+  .content h2,
+  .sidebar h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  /* Toggle Button Styling */
+  .toggle-section {
+    margin-top: 10px;
+    background-color: #007acc;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for toggle button */
+  .toggle-section:hover {
+    background-color: #005f99;
+  }
+  
+  /* Sidebar list styling */
+  .sidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin-bottom: 5px;
+    padding-left: 10px;
+    font-size: 0.9em;
+    color: #555;
+  }
+  
+  /* Content Section Styling */
+  .content div {
+    margin-bottom: 20px;
+  }
+  
+ 
 
 @media (max-width: 768px) {
     .container {
-        flex-direction: column;
+      flex-direction: column;
+      padding: 10px;
     }
-}
+  
+    .sidebar {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  
+    .profile-pic img {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .toggle-section {
+      font-size: 0.9em;
+      padding: 6px 10px;
+    }
+  }
+  
