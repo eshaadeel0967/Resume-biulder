@@ -5,7 +5,7 @@ interface PersonalInfo {
   address: string;
   phone: string;
   email: string;
-  imageUrl: string | ArrayBuffer | null | undefined;
+  imageUrl: string | ArrayBuffer | null | undefined ;
 }
 
 interface WorkExperience {
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  function generateResume(imageUrl: string | ArrayBuffer | null | undefined) {
+  function generateResume(imageUrl?: string | ArrayBuffer | null | undefined ) {
     // Collect form data using the defined interfaces
     const personalInfo: PersonalInfo = {
       name: getInputValue("name"),
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
       address: getInputValue("address"),
       phone: getInputValue("phone"),
       email: getInputValue("email"),
-      imageUrl: imageUrl,
+      imageUrl: imageUrl 
     };
 
     const skills: string[] = getInputValue("skills").split(",").map(skill => skill.trim());
@@ -75,64 +75,64 @@ document.addEventListener("DOMContentLoaded", () => {
       position: getInputValue("work-position"),
       company: getInputValue("work-company"),
       dates: getInputValue("work-dates"),
-      description: getInputValue("work-description"),
+      description: getInputValue("work-description")
     };
 
     const education: Education = {
       degree: getInputValue("education-degree"),
       institution: getInputValue("education-institution"),
-      dates: getInputValue("education-dates"),
+      dates: getInputValue("education-dates")
     };
 
     const reference: Reference = {
       name: getInputValue("reference-name"),
       phone: getInputValue("reference-phone"),
-      email: getInputValue("reference-email"),
+      email: getInputValue("reference-email")
     };
 
     // Generate resume content
     resumePreview.innerHTML = `
-      <div class="resume-header">
-        <img src="${personalInfo.imageUrl ? personalInfo.imageUrl : 'https://via.placeholder.com/80'}" alt="Profile Picture">
-        <div>
-          <h2>${personalInfo.name}</h2>
-          <p>${personalInfo.title}</p>
-          <p>${personalInfo.address}</p>
-          <p>${personalInfo.phone} | <a href="mailto:${personalInfo.email}">${personalInfo.email}</a></p>
-        </div>
+    <div class="resume-header">
+      ${personalInfo.imageUrl ? `<img src="${personalInfo.imageUrl}" alt="Profile Picture">` : ""}
+      <div>
+        <h2 contenteditable="true" class="editable" data-field="name">${personalInfo.name}</h2>
+        <p contenteditable="true" class="editable" data-field="title">${personalInfo.title}</p>
+        <p contenteditable="true" class="editable" data-field="address">${personalInfo.address}</p>
+        <p contenteditable="true" class="editable" data-field="phone">${personalInfo.phone} | <a href="mailto:${personalInfo.email}" contenteditable="true" data-field="email">${personalInfo.email}</a></p>
       </div>
-      
-      <div class="resume-section">
-        <h3>Skills</h3>
-        <ul class="skills-list">
-          ${skills.map(skill => `<li>${skill}</li>`).join('')}
-        </ul>
-      </div>
-      
-      <div class="resume-section">
-        <h3>Profile</h3>
-        <p>Hardworking ${personalInfo.title} seeking opportunities to leverage skills in ${skills.join(", ")}.</p>
-      </div>
-      
-      <div class="resume-section">
-        <h3>Employment History</h3>
-        <p><strong>${workExperience.position}</strong>, ${workExperience.company}</p>
-        <p>${workExperience.dates}</p>
-        <p>${workExperience.description}</p>
-      </div>
-      
-      <div class="resume-section">
-        <h3>Education</h3>
-        <p><strong>${education.degree}</strong>, ${education.institution}</p>
-        <p>${education.dates}</p>
-      </div>
-      
-      <div class="resume-section">
-        <h3>References</h3>
-        <p><strong>${reference.name}</strong></p>
-        <p>${reference.phone}</p>
-        <p><a href="mailto:${reference.email}">${reference.email}</a></p>
-      </div>
-    `;
-  }
+    </div>
+    
+    <div class="resume-section">
+      <h3>Skills</h3>
+      <ul class="skills-list">
+        ${skills.map(skill => `<li contenteditable="true" class="editable" data-field="skills">${skill}</li>`).join('')}
+      </ul>
+    </div>
+    
+    <div class="resume-section">
+      <h3>Profile</h3>
+      <p contenteditable="true" class="editable" data-field="profile">Hardworking ${personalInfo.title} seeking opportunities to leverage skills in ${skills.join(", ")}.</p>
+    </div>
+    
+    <div class="resume-section">
+      <h3>Employment History</h3>
+      <p><strong contenteditable="true" class="editable" data-field="work-position">${workExperience.position}</strong>, <span contenteditable="true" class="editable" data-field="work-company">${workExperience.company}</span></p>
+      <p contenteditable="true" class="editable" data-field="work-dates">${workExperience.dates}</p>
+      <p contenteditable="true" class="editable" data-field="work-description">${workExperience.description}</p>
+    </div>
+    
+    <div class="resume-section">
+      <h3>Education</h3>
+      <p><strong contenteditable="true" class="editable" data-field="education-degree">${education.degree}</strong>, <span contenteditable="true" class="editable" data-field="education-institution">${education.institution}</span></p>
+      <p contenteditable="true" class="editable" data-field="education-dates">${education.dates}</p>
+    </div>
+    
+    <div class="resume-section">
+      <h3>References</h3>
+      <p><strong contenteditable="true" class="editable" data-field="reference-name">${reference.name}</strong></p>
+      <p contenteditable="true" class="editable" data-field="reference-phone">${reference.phone}</p>
+      <p><a href="mailto:${reference.email}" contenteditable="true" data-field="reference-email">${reference.email}</a></p>
+    </div>
+  `;
+}
 });
