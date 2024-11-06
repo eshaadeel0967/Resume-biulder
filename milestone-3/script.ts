@@ -89,7 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
       phone: getInputValue("reference-phone"),
       email: getInputValue("reference-email")
     };
-
     // Generate resume content
     resumePreview.innerHTML = `
     <div class="resume-header">
@@ -134,5 +133,18 @@ document.addEventListener("DOMContentLoaded", () => {
       <p><a href="mailto:${reference.email}" contenteditable="true" data-field="reference-email">${reference.email}</a></p>
     </div>
   `;
+  const editableElements = document.querySelectorAll(".editable");
+    editableElements.forEach(element => {
+      element.addEventListener("input", (e) => {
+        const target = e.target as HTMLElement;
+        const field = target.dataset.field;
+        if (field) {
+          updateField(field, target.innerText);
+        }
+      });
+    });
+  }
+  function updateField(field: string, value: string) {
+    console.log(`Field ${field} updated to: ${value}`);
 }
 });
